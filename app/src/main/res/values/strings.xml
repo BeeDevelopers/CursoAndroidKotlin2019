@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BeeDevelopers</string>
+    <string name="title_activity_home">BeeDevelopers</string>
 </resources>

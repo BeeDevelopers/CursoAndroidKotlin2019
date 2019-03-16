@@ -1,33 +1,44 @@
 package com.example.beedevelopers
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.support.v7.app.AlertDialog
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity() {
+    val email = "h"
+    val pass = "h"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        test_btn.setOnClickListener(this)
-
         // Agregar OnClickListener de manera indiviual
-        /*test_btn.setOnClickListener {
-            val saludo = "Hola ${name_et.text}"
+        login_btn.setOnClickListener {
+            if (email_et.text.toString() == email && pass_et.text.toString() == pass) {
+                // Mostrar un Toast
+                Toast.makeText(this, "Loggeado!", Toast.LENGTH_LONG).show()
 
-            saludo_tv.text = saludo
-        }*/
-    }
+                // Abrir una activity
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
 
-    // Listener por Activity
-    override fun onClick(v: View?) {
-        when (v!!.id) {
-            test_btn.id -> {
-                val saludo = "Hola ${name_et.text}"
+            } else {
+                // Mostrar un Alert
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("ERROR")
+                builder.setMessage("Contraseña incorrecta")
+                builder.setPositiveButton("Aceptar") { dialogInterface: DialogInterface, i: Int ->
 
-                saludo_tv.text = saludo
+                }
+
+                val alert: AlertDialog = builder.create()
+                alert.show()
             }
+
         }
     }
 }

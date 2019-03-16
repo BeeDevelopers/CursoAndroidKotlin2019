@@ -10,15 +10,15 @@
             android:text="Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/test_btn"
+            android:id="@+id/login_btn"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/pass_et" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
     <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:id="@+id/name_et" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/email_et" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp" android:inputType="textEmailAddress" android:hint="Email"/>
@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/name_et" android:layout_marginEnd="16dp"
+            android:id="@+id/pass_et" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/email_et" android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
             app:layout_constraintStart_toStartOf="parent" android:hint="Contraseña"/>
 </android.support.constraint.ConstraintLayout>
